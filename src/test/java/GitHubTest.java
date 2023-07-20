@@ -1,3 +1,4 @@
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class GitHubTest extends BaseTest {
-
+protected Logger logger;
     @Test
     public void checkLogoOnTheLoginPage() {
         HomePage homePage = new HomePage(driver);
@@ -19,7 +20,7 @@ public class GitHubTest extends BaseTest {
     @Test
     public void checkLoginIsSuccessful() {
         HomePage home = new HomePage(driver);
-        home.goToLoginPage().loginSuccessful("test9874@ukr.net", "test9874@ukr.net");
+        home.goToLoginPage().loginSuccessful("yarynabilan3833@gmail.com", "parol3833");
         MainPage mainPage = new MainPage(driver);
         mainPage.getLogoOnTheMainPage();
         Assertions.assertTrue(mainPage.getLogoOnTheMainPage().isDisplayed());
@@ -30,7 +31,7 @@ public class GitHubTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
         homePage.goToLoginPage();
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.loginFailed("1test9874@ukr.net", "test9874@ukr.net");
+        loginPage.loginFailed("yarynabilan3833@gmail.com", "failed login");
         loginPage.validateErrorMessage("Incorrect username or password.");
     }
 
@@ -38,7 +39,7 @@ public class GitHubTest extends BaseTest {
     public void checkLogOutFromGitHub() {
         String expectedQuestionText = "Are you sure you want to sign out?";
         HomePage homePage = new HomePage(driver);
-        homePage.goToLoginPage().loginSuccessful("test9874@ukr.net", "test9874@ukr.net");
+        homePage.goToLoginPage().loginSuccessful("yarynabilan3833@gmail.com", "parol3833");
         MainPage mainPage = new MainPage(driver);
         mainPage.goToProfileForm();
         ProfileForm profileForm = new ProfileForm(driver);
@@ -53,7 +54,7 @@ public class GitHubTest extends BaseTest {
         expReposList.add("test");
 
         HomePage homePage = new HomePage(driver);
-        homePage.goToLoginPage().loginSuccessful("test9874@ukr.net", "test9874@ukr.net");
+        homePage.goToLoginPage().loginSuccessful("yarynabilan3833@gmail.com", "parol3833");
         MainPage mainPage = new MainPage(driver);
         mainPage.goToProfileForm().goToRepositoriesPage();
         RepositoriesPage repositoriesPage = new RepositoriesPage(driver);

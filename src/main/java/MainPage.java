@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 public class MainPage extends BasePage {
 
     By imgLocator = By.xpath("//img[@class='avatar circle'][1]");
-
+    private final static String TITLE = "Main page";
     public MainPage(WebDriver driver) {
-        super(driver);
+        super(driver, TITLE);
     }
 
     public WebElement getLogoOnTheMainPage() {
