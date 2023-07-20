@@ -1,4 +1,6 @@
 import helpers.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //import java.util.logging.LogManager;
@@ -14,7 +16,7 @@ public class BasePage {
         this.driver = driver;
         webDriverWait = new WebDriverWait(driver, 3);
         this.title = title;
-        this.logger = LogManager.getLogManager().getLogger(this.title);
+        this.logger = (Logger) LogManager.getLogger(this.title);
         ptintColorMessage("Page object of " + title + this.getClass().getName(), (org.apache.logging.log4j.Logger) logger, Level.DEBUG);
     }
 }
