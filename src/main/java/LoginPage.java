@@ -1,10 +1,11 @@
 import helpers.Level;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.logging.Logger;
+
+import static org.testng.Assert.assertEquals;
 
 public class LoginPage extends BasePage {
 
@@ -14,9 +15,9 @@ public class LoginPage extends BasePage {
     private By signInButtonLocator = By.xpath("//input[@value=\"Sign in\"]");
     private By errorTextLocator = By.xpath("//div[contains(text(), 'Incorrect username or password.')]");
 
-    private final static String TITLE = "Login page";
+//    private final static String TITLE = "Login page";
     public LoginPage(WebDriver driver) {
-        super(driver, TITLE);
+        super(driver);
     }
 
     public WebElement getLogo() {
@@ -24,7 +25,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage validateErrorMessage(String expectedMessage) {
-        Assertions.assertEquals(expectedMessage, driver.findElement(errorTextLocator).getText());
+        assertEquals(expectedMessage, driver.findElement(errorTextLocator).getText());
         return this;
     }
 
@@ -32,7 +33,7 @@ public class LoginPage extends BasePage {
         driver.findElement(loginFieldLocator).sendKeys(login);
         driver.findElement(passwordFieldLocator).sendKeys(password);
         driver.findElement(signInButtonLocator).click();
-        logger.info("Successful authorization");
+ //       logger.info("Successful authorization");
 //        printColorMessage("Successful authorization", logger, Level.INFO);
         return new MainPage(driver);
     }
