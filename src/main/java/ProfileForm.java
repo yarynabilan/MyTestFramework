@@ -1,7 +1,5 @@
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import static org.testng.Assert.assertTrue;
 
 public class ProfileForm extends BasePage {
