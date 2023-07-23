@@ -29,3 +29,4 @@ public class IssuesPage extends BasePage {
         driver.findElement(submitNewIssueButton).click();
     }
 }
+//updated
