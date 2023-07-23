@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
 
     protected WebDriver driver;
-    protected Logger logger;
+ //   protected Logger logger;
     @BeforeEach
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "/Users/yab/IdeaProjects/MyTestFramework/src/main/resources/drivers/chromedriver");

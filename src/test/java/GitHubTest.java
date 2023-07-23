@@ -8,9 +8,8 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
 public class GitHubTest extends BaseTest {
-protected Logger logger;
+//protected Logger logger;
     @Test
     public void checkLogoOnTheLoginPage() {
         HomePage homePage = new HomePage(driver);
