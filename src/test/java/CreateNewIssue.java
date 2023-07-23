@@ -17,7 +17,6 @@ public class CreateNewIssue extends BaseTest {
         issuesPage.clickSubmitNewIssueButton();
     }
 }
-
-
+//updated
 
 
